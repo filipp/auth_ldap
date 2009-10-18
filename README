@@ -1,0 +1,17 @@
+This PunBB extension allows your forum to authenticate against an OpenLDAP server.
+
+##Installation instructions
+
+* Drop auth_ldap into your punbb/extensions folder
+* Edit auth_ldap/auth_ldap.php and modify the server and basedn variables to your environment
+* Open http://yourserver/punbb/admin/extensions.php?section=manage and install the extension
+* Log in using an LDAP account
+
+##Notes
+* After installing this, LDAP users always get priority (the check is done before the built-in authentication).
+This means that a local user with the same name as an LDAP user will have their password overwritten.
+
+##Bugs
+
+* Uninstalling doesn't delete the LDAP users.
+* The realname is not set from LDAP (add_user() doesn't support it)
